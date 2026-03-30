@@ -58,7 +58,7 @@ BudgetBuddy solves this by automating expense tracking and providing smart recom
 ![Login Page](BB_screenshots/Screenshot%202026-03-30%20202906.png)
 
 ### Add Reminder Page
-![Dashboard](BB_screenshots/Screenshot%2026-03-30%202940.png)
+![Add Reminder](BB_screenshots/Screenshot%202026-03-30%20202940.png)
 
 ### View Profile Page
-![Reports](BB_screenshots/Screenshot%2026-03-30%202923.png)
+![View Profile](BB_screenshots/Screenshot%202026-03-30%20202923.png)
