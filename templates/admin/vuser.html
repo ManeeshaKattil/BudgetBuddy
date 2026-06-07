@@ -1,0 +1,39 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+<html>
+<head>
+    <title>View Users</title>
+</head>
+<body>
+    <div class="card-header bg-dark">
+        <h4 class="mb-0 text-white">Users</h4>
+    </div>
+    <table class="table table-bordered table-hover table-light table-striped" border="1">
+
+    
+    
+        <tr>
+
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>phone no</th>
+            <th>Email</th>
+            <th>Report</th>
+        </tr>
+{% for i in data %}
+        <tr>
+            <td>{{ i.Name }}</td>
+            <td>{{ i.DOB }}</td>
+            <td>{{ i.Place }}<br>{{ i.Post }}<br>{{ i.Pin }}</td>
+            <td>{{ i.Gender }}</td>
+            <td>{{ i.Phone_number }}</td>
+            <td>{{ i.Email }}</td>
+            <td><a href="/view_report_get/{{ i.id }}#aaa" class="text-decoration-none">Report</a></td>
+        </tr>
+{% endfor %}
+</table> 
+</body>
+</html>
+{% endblock %}

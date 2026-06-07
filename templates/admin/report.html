@@ -1,0 +1,36 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+<html>
+<head>
+    <title>View Report</title>
+</head>
+<body>
+    <div class="card-header bg-dark">
+        <h4 class="mb-0 text-white">REPORT</h4>
+    </div>
+    <table class="table table-bordered table-hover table-light table-striped" border="1">
+
+
+
+        <tr>
+
+            <th>Date</th>
+            <th>Transaction Type</th>
+            <th>Mode</th>
+            <th>Expense/Income Type</th>
+            <th>Amount</th>
+        </tr>
+{% for i in data %}
+        <tr>
+            <td>{{ i.Date }}</td>
+            <td>{{ i.Tan_type }}</td>
+            <td>{{ i.Mode }}</td>
+            <td>{{ i.Exp_type }}</td>
+            <td>{{ i.Amount }}</td>
+{#            <td></td>#}
+        </tr>
+{% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

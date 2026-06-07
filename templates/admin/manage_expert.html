@@ -1,0 +1,59 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="-sha384MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <title>Manage Expert</title>
+</head>
+<body>
+    <div class="card-header bg-dark">
+        <h4 class="mb-0 text-white">Manage Expert</h4>
+
+    </div>
+
+     {% for message in  messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+                {% endfor %}
+    <form method="post" action="/manage_expert_post#aaa">
+    {% csrf_token %}
+    <table class="table table-bordered table-hover table-light table-striped" border="1">
+        <tr>
+            <th>Search</th>
+            <th colspan="5">
+                <input type="search" value="{{ name }}" name="search" class="form-control bg-light border-0 shadow-sm">
+            </th>
+            <th>
+{#                <button type="submit" class="btn btn-secondary me-2">Search</button>#}
+                <a href="/add_expert_get#aaa" class="btn btn-info">Add New</a></th>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        {% for i in experts %}
+        <tr>
+            <td>{{ i.Name }}</td>
+            <td>{{ i.DOB }}</td>
+            <td>{{ i.Gender }}</td>
+            <td>{{ i.Place }}<br>{{ i.Post }}<br>{{ i.Pin }}</td>
+            <td>{{ i.Phone_number }}</td>
+            <td>{{ i.Email }}</td>
+            <td><a href="/edit_expert/{{ i.LOGIN.id }}#aaa" class="btn btn-info" class="text-decoration-none">Edit</a><br><a href="/delete_expert/{{ i.id }}" class="btn btn-danger" class="text-decoration-none">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </form>
+</body>
+</html>
+{% endblock %}
